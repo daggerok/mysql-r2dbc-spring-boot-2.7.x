@@ -1,6 +1,22 @@
 # MySQL R2DBC Spring Boot 2.7.x [![CI](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/actions/workflows/ci.yml/badge.svg)](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/actions/workflows/ci.yml)
 This repository demonstrates Spring Boot R2DBC MySQL support
 
+## Table of content
+* [Steps](#steps)
+* [Getting started](#getting-started)
+* [Release](#release)
+* [Reference Documentation](#reference-documentation)
+
+## Steps
+### [Step 1](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/tree/v0-simple-database-client-select-with-mysql-in-docker)
+Simple databaseClient use: `SELECT 1` query with local mysql in docker.
+Check [v0-simple-database-client-select-with-mysql-in-docker](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/tree/v0-simple-database-client-select-with-mysql-in-docker)
+tag for details
+
+## Getting started
+
+Run and test latest's code:
+
 ```bash
 if [[ "" != `docker ps -aq` ]] ; then docker rm -f -v `docker ps -aq` ; fi
 
@@ -19,7 +35,16 @@ while [[ $(docker ps -n 1 -q -f health=healthy -f status=running | wc -l) -lt 1 
 docker stop mysql
 ```
 
-### Reference Documentation
+## Release
+
+Create and push git tag to park some piece of completed work, for example:
+
+```bash
+git tag v0-simple-database-client-select-with-mysql-in-docker
+git pso --tags
+```
+
+## Reference Documentation
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.0/maven-plugin/reference/html/)
 * [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.0/maven-plugin/reference/html/#build-image)
