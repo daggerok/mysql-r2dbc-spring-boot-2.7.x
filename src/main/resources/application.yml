@@ -1,0 +1,10 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+  r2dbc:
+    username: user
+    password: password
+    url: r2dbc:mysql://127.0.0.1:3306/database
+  main:
+    web-application-type: none

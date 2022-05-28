@@ -1,0 +1,6 @@
+logging:
+  level:
+    io.r2dbc: trace
+    #dev.miku: trace
+    org.springframework.r2dbc: trace
+    io.netty.resolver.dns.DnsServerAddressStreamProviders: off
