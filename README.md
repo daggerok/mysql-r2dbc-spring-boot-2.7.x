@@ -45,6 +45,20 @@ git pso --tags
 ```
 
 ## Reference Documentation
+* Spring boot glob resources:
+  ```kotlin
+  ResourcePatternUtils.getResourcePatternResolver(resourceLoader)
+      .getResources("classpath:*/db/migrations/*.ddl.sql")
+      .sort { r1, r2 -> "${r1.url}".compareTo("${r2.url}") }
+      .forEach { prontln(it) } // will print:
+        // /path/to/db/migrations/V202205281525_drop_table_if_exists_messages.ddl.sql
+        // /path/to/db/migrations/V202205281526_create_table_if_not_exists_messages.ddl.sql
+        // /path/to/db/migrations/V202205281527_create_index_messages_sent_at_idx.ddl.sql
+  ```
+* Spring boot glob resources, see 1: org.springframework.core.io.support.PathMatchingResourcePatternResolver.getResources
+* Spring boot glob resources, see 2: org.springframework.core.io.support.PathMatchingResourcePatternResolver.findPathMatchingResources
+* Spring boot glob resources, see 3: org.springframework.core.io.support.ResourcePatternUtils.getResourcePatternResolver
+* Spring boot glob resources, see 4: org.springframework.core.io.support.ResourcePatternResolver.getResources
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.0/maven-plugin/reference/html/)
 * [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.0/maven-plugin/reference/html/#build-image)
