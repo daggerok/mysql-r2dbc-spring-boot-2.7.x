@@ -8,11 +8,10 @@ spring:
     url: r2dbc:mysql://127.0.0.1:3306/database
   main:
     web-application-type: none
-  sql:
-    init:
-      schema-locations: classpath*:/db/migrations/*.ddl.sql
-      data-locations: classpath*:/db/migrations/*.dml.sql
-      mode: always
+  liquibase:
+    change-log: classpath*:/db/migrations/changelog-master.xml
+    #driver-class-name: com.mysql.cj.jdbc.Driver
 logging:
   level:
+    #daggerok: trace
     io.netty.resolver.dns.DnsServerAddressStreamProviders: off

@@ -12,6 +12,14 @@ This repository demonstrates Spring Boot R2DBC MySQL support
 Simple databaseClient use: `SELECT 1` query with local mysql in docker.
 Check [v0-simple-database-client-select-with-mysql-in-docker](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/tree/v0-simple-database-client-select-with-mysql-in-docker)
 tag for details
+### [Step 2](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/tree/v1-database-migrations-using-SqlInitializationProperties)
+Database migration using simple schema.sql and data.sql init scripts.
+Check [v1-database-migrations-using-SqlInitializationProperties](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/tree/v1-database-migrations-using-SqlInitializationProperties)
+tag for details
+### [Step 3](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/tree/v2-database-migrations-using-custom-r2dbc-liquibase-spring-boot-starter)
+More advanced database migration using custom R2DBC Liquibase migration tool Spring Boot starter.
+Check [v2-database-migrations-using-custom-r2dbc-liquibase-spring-boot-starter](https://github.com/daggerok/mysql-r2dbc-spring-boot-2.7.x/tree/v2-database-migrations-using-custom-r2dbc-liquibase-spring-boot-starter)
+tag for details
 
 ## Getting started
 
@@ -44,6 +52,8 @@ git tag v0-simple-database-client-select-with-mysql-in-docker
 git pso --tags
 ```
 
+<!--
+
 ## Reference Documentation
 * Spring boot glob resources:
   ```kotlin
@@ -71,3 +81,5 @@ git pso --tags
 * [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
 * [R2DBC Homepage](https://r2dbc.io)
 * Make sure to include a [R2DBC Driver](https://r2dbc.io/drivers/) to connect to your database.
+
+-->

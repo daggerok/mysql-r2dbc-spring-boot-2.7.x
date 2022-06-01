@@ -6,16 +6,20 @@ import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestMethodOrder
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE
+import org.springframework.context.annotation.Import
 import org.springframework.data.r2dbc.core.R2dbcEntityTemplate
 import org.springframework.data.r2dbc.core.delete
 import org.springframework.data.r2dbc.core.select
 import org.springframework.r2dbc.core.DatabaseClient
+import org.springframework.test.context.ContextConfiguration
 import reactor.kotlin.test.test
 import reactor.test.StepVerifier
 
 @SpringBootTest(webEnvironment = NONE)
+@Import(R2dbcLiquibaseAutoConfiguration::class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class ApplicationTests @Autowired constructor(
     val messages: Messages,
