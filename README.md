@@ -27,7 +27,13 @@ tag for details
 
 ## Getting started
 
-Run and test latest's code:
+Test:
+
+```bash
+/mvnw
+```
+
+Run for integration test:
 
 ```bash
 if [[ "" != `docker ps -aq` ]] ; then docker rm -f -v `docker ps -aq` ; fi
@@ -42,10 +48,12 @@ docker run -d --rm --name mysql --platform=linux/x86_64 \
 
 while [[ $(docker ps -n 1 -q -f health=healthy -f status=running | wc -l) -lt 1 ]] ; do sleep 3 ; echo -n '.' ; done ; sleep 15; echo 'MySQL is ready.'
 
-./mvnw
+./mvnw clean compile spring-boot:run
 
 docker stop mysql
 ```
+
+<!--
 
 ## Release
 
@@ -55,8 +63,6 @@ Create and push git tag to park some piece of completed work, for example:
 git tag v0-simple-database-client-select-with-mysql-in-docker
 git pso --tags
 ```
-
-<!--
 
 ## Reference Documentation
 * Spring boot glob resources:
